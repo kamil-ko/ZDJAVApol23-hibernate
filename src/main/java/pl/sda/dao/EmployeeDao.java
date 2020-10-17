@@ -42,5 +42,16 @@ public class EmployeeDao extends AbstractDao<Employee> {
     }
 
 
+    public List<Employee> findAllByDepartmentID(int departmentId){
+        Session session = SessionProvider.getSession();
+        List<Employee> records =
+                session.createQuery("from Employee where department.id = :departmentId",Employee.class )
+                .setParameter("departmentId",departmentId)
+                        .list();
+        session.close();
+        return records;
+    }
+
+
 
 }
