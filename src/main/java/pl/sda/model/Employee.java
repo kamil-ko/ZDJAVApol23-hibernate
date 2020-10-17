@@ -24,7 +24,19 @@ public class Employee {
     @ManyToOne(targetEntity = Department.class)
     private Department department;
 
+    @Embedded
+    private Address address;
+
+
     public Employee() {
+    }
+
+    public Employee(String firstName, String lastName, Department department, Address address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.address = address;
     }
 
     public Employee(String firstName, String lastName, Department department) {

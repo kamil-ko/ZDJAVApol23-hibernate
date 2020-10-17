@@ -18,6 +18,8 @@ public class Department {
     @Column
     private String name;
 
+
+
     public Department() {}
 
     public Department(String name) {
